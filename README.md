@@ -6,6 +6,4 @@
 
                   
                   
-                  
-                  
-                       You can play the game here ------> https://alok-meena.github.io/Fruit-Slot-Machine-Game/
+You can play the game here ------> https://alok-meena.github.io/Fruit-Slot-Machine-Game/
