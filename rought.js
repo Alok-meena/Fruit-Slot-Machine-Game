@@ -1,44 +1,46 @@
-const value1=document.getElementById("value1");
-const value2=document.getElementById("value2");
-const value3=document.getElementById("value3");
+let value1=document.getElementById("value1");
+let value2=document.getElementById("value2");
+let value3=document.getElementById("value3");
 
-const startButton=document.getElementById("startButton");
-
-const result=document.getElementById("result");
+let startbutton=document.getElementById("start");
+let result=document.getElementById("result");
 
 const values = ["🍒", "🍋", "🍌", "🍉", "🍓"];
 
-let animationId;
-
 function getRandomValue(){
-    return values[Math.floor(Math.random() * values.length)];
+    return values[Math.floor(Math.random()* (values.length))];
 }
 
+let d;
+
 function startSlotMachine(){
-    animationId=setInterval(()=>{
+    if(d) clearInterval(d);//ye hai taki by chance ho to clear ho jaye
+    d=setInterval(() => {
         value1.innerText=getRandomValue();
         value2.innerText=getRandomValue();
         value3.innerText=getRandomValue();
-    },100);
+    }, 100);
 
-    setTimeout(()=>{
-        clearInterval(animationId);
+    setTimeout(() => {
+        clearInterval(d);
         checkResult();
-    },1000);
+    }, 1000);
 }
 
 function checkResult(){
-    const val1=value1.innerText;
-    const val2=value2.innerText;
-    const val3=value3.innerText;
+    let v1=value1.innerText;
+    let v_2=value2.innerText;
+    let v_3=value3.innerText;
 
-    if(val1==val2 && val2==val3){
-        result.textContent="JACKPOT";
-        result.style.color="golden :)";
+    if(v1==v_2 && v_2==v_3){
+        result.innerText="JACKPOTTTT :)";
+        result.style.color="gold";
     }
     else{
-        result.textContent="TRY AGAIN :(";
+        result.innerText="TRY AGAIN :(";
         result.style.color="white";
+
     }
 }
-startButton.addEventListener("click",startSlotMachine);
+
+startbutton.addEventListener("click",startSlotMachine);
