@@ -8,6 +8,7 @@ let result=document.getElementById("result");
 const values = ["🍒", "🍋", "🍌", "🍉", "🍓"];
 
 function getRandomValue(){
+    //math.random () function always give values b/w 0-1
     return values[Math.floor(Math.random()* (values.length))];
 }
 
